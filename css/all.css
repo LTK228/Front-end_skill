@@ -1,0 +1,353 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 以上為 CSS reset */
+
+
+* {
+    box-sizing: border-box;            /* 固定border與padding */
+    -moz-box-sizing: border-box;       /* 火狐 */
+    -webkit-box-sizing: border-box;    /* Chrome */
+}
+
+.clearfix::after {
+    clear: both;        /* 清除浮動 */
+    display: table;     /* 解決 margin-top 的怪異現象 */
+    content: "";        /* 偽元素需搭配 content 才能驅動 */
+}
+
+.clearfix {
+    clear: both;        
+}
+
+.wrap {
+    width: 80%;
+	margin: auto;
+}
+
+/* 頂端的 FB、LINE連結 */
+.top {
+	background: #e0e0e0;
+    padding: 5px;                       /* 避免字過於貼近背景的外框 */
+}
+
+.top ul {
+    float: right;
+}
+
+.top li {
+	float: left;
+    margin-right: 10px;
+}
+
+.demarcation {
+    border-right: 1px solid gray;       /* FB 和 github 的區分線 */   
+    padding-right: 10px;                /* 區分 top-FB 的距離 */
+}
+
+.top-FB {
+	text-decoration:none;
+    color: #4460a0;
+}
+.top-FB img {
+    padding-right: 5px;                /* 讓圖片和文字保有距離 */
+}
+.top-FB:hover {
+    color: #00b1ff;                    /* 提升使用者體驗 */
+    border-bottom: 2px solid #00b1ff;
+    padding-bottom: 2px;
+}
+.top-github {
+    color: #f3b72b;
+    text-decoration: none;
+}
+.top-github img{
+	padding-right: 5px;
+}
+.top-github:hover {
+    color: #00b1ff;
+    border-bottom: 2px solid #00b1ff;
+    padding-bottom: 2px;
+}
+
+/* LOGO及menu */
+.header {
+	padding: 5px;              /* 留白 */
+    height: 50px;
+}
+.header h1{                    /* 用圖片代替文字 */
+    width: 171px;
+    height: 36px;
+    background: url(../img/h1-LOGO.png);
+    white-space: nowrap;        /* 若字有用空白分開，讓他們不要斷開 */
+    text-indent: 101%;          /* 字縮排到圖片後面 */
+    overflow: hidden;           /* 若超出範圍，則隱藏字 */
+    float: left;                /* 與.header ul進行排版 */
+}
+.header ul {
+	float: right;
+    padding: 5px;
+}
+.header li {
+	float: left;
+    margin-right: 5px;
+}
+.header a {
+	text-decoration: none;
+    color: #00cc99;
+    display: block;            /* 增加點擊的面積 */
+    padding: 5px 10px;         /* 增加點擊的面積 */
+}
+.header a:hover {
+	border-bottom: 3px solid #00cc99;
+}
+
+
+/* 幻燈片 */
+.wrapper {
+    position: relative;
+    width: 900px;
+    height: 300px;      /* 給 .dot li 對齊 */
+    overflow: hidden;
+    margin:0 auto; 
+}
+
+.wrapper ul {
+    list-style: none;
+    position: absolute;
+    width: 4500px;      /* 給 li 的容器：900*5=4500 */
+    left: 0px;
+    margin:0;
+    padding: 0;
+    transition: all .7s;
+}
+
+.wrapper li {
+    float: left;
+    width: 900px;
+    height: 300px;
+    /* overflow: hidden; */
+}
+
+.wrapper .dot {
+    bottom:1px;
+    width:100%;     /* 給 flex 使用 */
+    display: flex;  /* 給 justify-content 使用 */
+    justify-content: center;
+}
+
+.wrapper .dot li {
+    border:1px solid #fff;
+    margin: 0 5px;
+    width:24px;
+    height: 10px;
+}
+
+.wrapper .dot li:hover {
+    background-color: #fff;
+}
+
+
+/* 產品介紹 */
+.product {
+	margin-top: 40px;
+}
+.productList {
+	float: left;
+    width: 30%;
+    margin: 1%;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    box-shadow: 3px 3px 10px gray;    /* 陰影特效：x軸位移 y軸位移 柔焦 顏色 */
+    min-height: 370px;                /* 規定清單至少要比最小高度還多，來達到每個框格一樣大的效果 */  
+}
+.productList img {
+	display: block;     /* 轉換屬性，為了能夠用 margin 推擠 */
+    margin: 20px auto;  /* 圖片置中 */
+    max-width: 100%;    /* 限制最大寬度，避免網頁大小改變時，圖片跑出框框外 */
+}
+.productList h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;    /* 和內文留白 */
+}
+.productList p {
+	line-height: 24px;
+}
+.jQueryList {
+    width: 90%;
+	list-style: disc;
+    margin-left: 30px;
+    line-height: 24px;
+}
+
+
+/* 表格設計 */
+.tabler {
+	margin-top: 30px;          /* 和 .product 保持距離 */
+}
+
+.tabler h2 {
+	font-size: 30px;
+    text-align: center;        /* 字體置中 */
+    margin-bottom: 20px;       /* 和表格保持距離 */
+}
+
+.thumbs-up {
+    color: #00cc99;
+	font-weight: bold;         /* 字體加粗 */
+}
+
+.tabler table {
+    width: 90%;                /* 佔所有瀏覽器的90%寬度 */
+    margin: auto;              /* 根據寬度自動置中 */
+    text-align: left;          /* 字體統一置左 */
+}
+
+.tabler th {
+	border-top: 1px solid #a5a5a5;
+    border-bottom: 1px solid #a5a5a5;
+	padding: 10px 20px;
+    background-color: #bababa;
+	font-weight: bold;         /* 字體加粗 */
+}
+
+.tabler td {
+    border-bottom: 1px solid #a5a5a5;
+	padding: 10px 20px;
+}
+
+
+/* 資料輸入區 */
+form{   /* 表格置中 */
+        width: 85%;
+        margin: 20px auto;
+}
+
+h1{     /* 標題置中 */
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+fieldset{
+    border-radius: 20px;                  /* 圓角 */
+    border: 2px rgb(130, 134, 134) solid; /* 線框 */
+    background-color: #f4f4f4;          /* 背景色 */
+    border-left: 4px solid #333332;     /* 左線 */
+    margin: 10px 0 10px 0;                /* 與瀏覽器的留白 */
+    padding: 20px 30px;                   /* 與內容的留白 */
+}
+
+legend{   /* 表格標題 文字大小 */
+    font-size: 30px;
+}
+
+label{    /* 輸入格的標題 */
+    font-size: 1.2em;       /* 文字大小 */
+    font-weight: bold;      /* 粗體字 */
+    display: block;         /* 屬性 block */
+    margin: 10px 0 5px 0;   /* ↑ → ↓ ← */
+}
+
+.comment{  /* 輸入格的提示 */
+    font-size: 0.9em;       /* 文字大小 */
+    font-weight: bold;      /* 粗體字 */
+    color: #52aef4;       /* 文字顏色 */
+    margin: 10px 0;         /* ↑↓  →← */
+}
+
+input[type=text],[type=password]{       /* 輸入格 */
+    font-size: 1.2em;         /* 文字大小 */
+    font-weight: bold;        /* 粗體字 */
+    border: 1px solid #ccc; /* 文字顏色 */
+    border-radius: 10px;      /* 輸入格圓角 */
+    padding: 6px 10px;        /* 輸入格與輸入文字的距離 */
+    margin-bottom: 20px;      /* 輸入格與外面元素的距離 */
+}
+
+span{   /* 驗證提示字 */
+    margin-left: 10px;     /* 與輸入內容保持距離 */
+}
+
+::placeholder {     /* 避免文字提示，在各瀏覽器顏色不同，造成不顯眼 */
+    font-size: 0.9em;             /* 文字大小 */
+    font-weight: bold;            /* 粗體字 */
+    color: rgb(136, 136, 136);  /* 文字顏色 */
+    padding-left: 5px;            /* 提示字與左側的距離 */
+}
+
+
+/* footer設計 */
+.footer {
+    margin-top: 5px;
+    padding: 10px;
+}
+.footer h2 {
+	float: left;
+	background-image: url(../img/footer-LOGO.png);
+    width: 171px;
+    height: 36px;
+    text-indent: 101%;       /* 字體縮排到圖片後面 */
+    overflow: hidden;        /* 若文字超過圖片的面積就隱藏文字 */
+    white-space: nowrap;     /* 文字中有用空白分開的話，不要讓他們斷開 */
+}
+.connection {
+	float: right;
+}
+.connection span {
+    color: red;
+}
+
+/* 回到本頁 最上方 */
+.scroll-up {
+	width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+.scroll-up img {
+	width: 100%;
+}

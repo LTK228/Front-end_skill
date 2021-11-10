@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <title>HTML&CSS 與 JS 作業</title> <!-- 題目 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- 使用IE瀏覽器者可用最新版觀看 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- RWD使用 -->
+    <meta name="description" content="六角學院-HTML&CSS課程的最終作業" /> <!-- 網頁內容描述 -->
+    <meta name="keywords" content="HTML, CSS, 六角學院, 最終作業, HexSchool, Hex School, 線上課程" /> <!-- 網頁關鍵字 -->
+    <meta name="generator" content="VScode /"> <!-- 網頁編輯器名稱 -->
+    <meta name="distribution" content="Taiwan" /> <!-- 網頁發佈地區 -->
+    <meta name="author" content="李庭侃" /> <!-- 作者名稱 -->
+    <meta name="Creation-Date" content="04-Oct-2019 22:15:00" /> <!-- 創作日期 -->
+    <!-- 給臉書連結使用的 -->
+    <meta property="og:title" content="HexSchool 六角學院">
+    <meta property="og:image" content="img/html_css_cover.jpg">
+    <meta property="og:description" content="六角學院-HTML&CSS課程的最終作業">
+    <link rel="shortcut icon" href="img/icon.png"> <!-- 網頁的icon -->
+    <link rel="stylesheet" href="css/all.css" type="text/css"> <!-- 連接CSS -->
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="top clearfix">
+            <!-- ul,li有使用float，需要清除 -->
+            <ul>
+                <li class="demarcation">
+                    <!-- 設定成 按icon也能連結 -->
+                    <a class="top-FB"
+                        href="https://www.facebook.com/gimmy.lee.75"
+                        title="FB官網" target="_blank"><img src="img/icon-fb.png" alt="FaceBook" />Facebook</a>
+                </li>
+                <li>
+                    <a class="top-github" href="https://github.com/LTK228" title="Github" target="_blank"><img
+                            src="img/icon-github.png" alt="Github" />Github</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header clearfix">
+            <h1>Hex School 六角學院</h1>
+            <ul>
+                <li><a title="官網首頁" target="_blank" href="https://www.hexschool.com/">首頁</a></li>
+                <li><a title="課程內容" target="_blank" href="https://www.hexschool.com/courses/">產品介紹</a></li>
+                <li><a title="信箱聯絡" target="_blank" href="mailto:service@hexschool.com">聯絡我們</a></li>
+                <!-- email的連接方式 "mailto: " -->
+            </ul>
+        </div>
+
+
+        <!-- ↓ 幻燈片 -->
+        <div class="wrapper">
+            <ul class="slides">
+                <li><img src="img/slide1.jpg"></li>
+                <li><img src="img/slide2.jpg"></li>
+                <li><img src="img/slide3.jpg"></li>
+                <li><img src="img/slide4.jpg"></li>
+                <li><img src="img/slide5.jpg"></li>
+            </ul>
+
+            <ul class="dot">
+                <li id="1"></li>
+                <li id="2"></li>
+                <li id="3"></li>
+                <li id="4"></li>
+                <li id="5"></li>
+            </ul>
+
+            <div id="prevSlide" class="slide_btn">
+                <i class='fas fa-arrow-circle-left' style='font-size:36px'></i>
+            </div>
+            <div id="nextSlide" class="slide_btn">
+                <i class='fas fa-arrow-circle-right' style='font-size:36px'></i>
+            </div>
+        </div>
+        <!-- ↑ 幻燈片 end -->
+
+
+        <div class="product clearfix">
+            <ul>
+                <li class="productList clearfix">
+                    <!--                        <a title="HTML5 基礎教學" target="_blank" href="">-->
+                    <img src="img/product-HTML.png" alt="HTML5 基礎教學">
+                    <!--                        </a>-->
+                    <h2>HTML 5 基礎教學</h2>
+                    <p>前端工程師 HTML&CSS 切板技術，透過實際的範例，瞭解正確的網站開發流程。</p>
+                </li>
+                <li class="productList">
+                    <!--                        <a title="RWD 響應式網站設計" target="_blank" href="">-->
+                    <img src="img/product-JavaScript.png" alt="RWD 響應式網站設計">
+                    <!--                        </a>-->
+                    <h2>JavaScript 基本操作</h2>
+                    <p>如何動態操作 HTML 的架構，了解 BOM 與 DOM 物件模型，透過事件處理進行動作，如滑鼠點擊 (click)、鍵盤輸入 (keydown) 等。
+                    </p>
+                </li>
+                <li class="productList">
+                    <!--                        <a title="jQuery 實戰教學" target="_blank" href="">-->
+                    <img src="img/product-jQuery.png" alt="jQuery 實戰教學">
+                    <!--                        </a>-->
+                    <h2>jQuery 實戰教學</h2>
+                    <ul>學習內容如下
+                        <li class="jQueryList">瞭解變數的使用方法</li>
+                        <li class="jQueryList">學習並操作 DOM</li>
+                        <li class="jQueryList">學習基本數學運算方式</li>
+                        <li class="jQueryList">套件的操作及運用</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- table 練習 -->
+        <div class="tabler">
+            <h2>線上及實體課程的差異</h2>
+            <table>
+                <tr>
+                    <th>項目</th>
+                    <th>本課程</th>
+                    <th>一般線上課程</th>
+                    <th>實體課程</th>
+                </tr>
+                <tr>
+                    <td>費用</td>
+                    <td class="thumbs-up">較低</td>
+                    <td class="thumbs-up">較低</td>
+                    <td>較高</td>
+                </tr>
+                <tr>
+                    <td>學習效果</td>
+                    <td>一般</td>
+                    <td>較低</td>
+                    <td class="thumbs-up">很好</td>
+                </tr>
+                <tr>
+                    <td>Code review</td>
+                    <td class="thumbs-up">有</td>
+                    <td>無</td>
+                    <td>不一定</td>
+                </tr>
+                <tr>
+                    <td>課程更新速度</td>
+                    <td class="thumbs-up">普通</td>
+                    <td class="thumbs-up">普通</td>
+                    <td>較慢</td>
+                </tr>
+                <tr>
+                    <td>多次複習</td>
+                    <td class="thumbs-up">可</td>
+                    <td class="thumbs-up">可</td>
+                    <td>不可</td>
+                </tr>
+                <tr>
+                    <td>字幕</td>
+                    <td class="thumbs-up">有</td>
+                    <td>不一定</td>
+                    <td>板書</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="former clearfix">
+            
+            <form action="" method="GET">
+                <br/>
+                <h1>驗證清單</h1>
+                <fieldset>
+                    <!-- 表格 -->
+                    <legend>Form Check</legend> <!-- 表格的標題 -->
+            
+                    <!-- 表格一、姓名 -->
+                    <label for="name">姓名</label>
+                    <p class="comment">⚠ 必填<br>(1. 不可空白　2. 至少 2 個字　3. 必須全部為中文)</p>
+                    <!-- 1.required 必須填寫　　2.autofocus 開分頁游標自動在此 3.placeholder提示字 -->
+                    <input type="text" id="name" name="name" required placeholder="李庭侃" />
+                    <span id="nameCheckResult"></span>
+            
+                    <hr style="height:1px; border:none; border-top:1px dashed #c0c5ca;" />
+            
+                    <!-- 表格二、密碼 -->
+                    <label for="pwd">密碼</label>
+                    <p class="comment">⚠ 必填<br>(1. 不可空白　2. 至少 6 個字　<br>3. 內容可為英文、數字或特殊字元 [!@#$%^&*] ，必須需同時含有英文和數字)</p>
+                    <!-- 1.required 必須填寫　　2.autocomplete="off" 不要記錄密碼　　3.placeholder提示字 -->
+                    <input type="password" id="pwd" name="pwd" required autocomplete="off" placeholder="AIoT09" />
+                    <span id="pwdCheckResult"></span>
+            
+                    <hr style="height:1px; border:none; border-top:1px dashed #c0c5ca;" />
+            
+                    <!-- 表格三、日期 -->
+                    <label for="date">日期</label>
+                    <p class="comment">格式：西元年/月/日 (yyyy/mm/dd)</p>
+                    <input type="text" id="date" name="date" placeholder="2021/11/11" />
+                    <span id="dateCheckResult"></span>
+            
+                    <hr style="height:1px; border:none; border-top:1px dashed #c0c5ca;" />
+            
+                    <!-- 按鈕 -->
+                    <input type="submit" value="送出" class="btn">
+                    <input type="reset" value="清除">
+                </fieldset>
+            </form>
+            
+        </div>
+        <div class="footer clearfix">
+            <h2>Hex School 六角學院</h2>
+            <div class="connection">
+                <p>聯絡我：<span>gimmy40215@gmail.com</span></p>
+                <p>電話：<span>0911483228</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 回到本頁 最上方 -->
+    <a href="#top" class="scroll-up" title="回到最上面"><img src="img/Scroll-To-Top-Button-icon.png" alt="回到最上方"></a>
+
+
+    <!-- jQuery -->
+    <script src="./jquery-3.6.0.min.js"></script>
+    <!-- 靠 CDN 的方法：https://jquery.com/download/#other-cdns -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <script type="text/javascript" src="/js/CrossSlide.js"></script>
+    <script type="text/javascript" src="js/check.js"></script>
+</body>
+
+</html>
